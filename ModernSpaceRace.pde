@@ -19,12 +19,12 @@ void setup(){
   frameRate(60);
   size(1280, 720);
 
-  btnGen1 = new GeneratorPanel("1",64,72,550,115,"Button(btnGen1)");
-  btnGen2 = new GeneratorPanel("2",666,72,550,115,"Button(btnGen2)");
-  btnGen3 = new GeneratorPanel("3",64,220,550,115,"Button(btnGen3)");
-  btnGen4 = new GeneratorPanel("4",666,220,550,115,"Button(btnGen4)");
-  btnGen5 = new GeneratorPanel("5",64,368,550,115,"Button(btnGen5)");
-  btnGen6 = new GeneratorPanel("6",666,368,550,115,"Button(btnGen6)");
+  btnGen1 = new GeneratorPanel("1",64,72,550,115, "button1");
+  btnGen2 = new GeneratorPanel("2",666,72,550,115, "button1");
+  btnGen3 = new GeneratorPanel("3",64,220,550,115, "button1");
+  btnGen4 = new GeneratorPanel("4",666,220,550,115, "button1");
+  btnGen5 = new GeneratorPanel("5",64,368,550,115, "button1");
+  btnGen6 = new GeneratorPanel("6",666,368,550,115, "button1");
 
 }
 
@@ -61,7 +61,7 @@ void buttonCode(){
 
 }
 
-void Button1(GeneratorPanel panel){
+void button1(){
   totalMoney+= 1000;
   println("Button 1 was pressed");
 }
