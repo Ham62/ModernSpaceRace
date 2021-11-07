@@ -13,18 +13,25 @@ GeneratorPanel btnGen5;
 GeneratorPanel btnGen6;
 
 int totalMoney = 0;
+int baseOutput = 1;
+int baseCost = 100;
+int btn2Mult = 20;
+int btn3Mult = 150;
+int btn4Mult = 1350;
+int btn5Mult = 9001;
+int btn6Mult = 100000;
 
 
 void setup(){
   frameRate(60);
   size(1280, 720);
 
-  btnGen1 = new GeneratorPanel("1",64,72,550,115, "button1", 1);
-  btnGen2 = new GeneratorPanel("2",666,72,550,115, "button2", 20);
-  btnGen3 = new GeneratorPanel("3",64,220,550,115, "button3", 150);
-  btnGen4 = new GeneratorPanel("4",666,220,550,115, "button4", 1350);
-  btnGen5 = new GeneratorPanel("5",64,368,550,115, "button5", 9001);
-  btnGen6 = new GeneratorPanel("6",666,368,550,115, "button6", 100000);
+  btnGen1 = new GeneratorPanel("1",64,72,550,115, "button1", baseOutput);
+  btnGen2 = new GeneratorPanel("2",666,72,550,115, "button2", baseOutput*btn2Mult);
+  btnGen3 = new GeneratorPanel("3",64,220,550,115, "button3", baseOutput*btn3Mult);
+  btnGen4 = new GeneratorPanel("4",666,220,550,115, "button4", baseOutput*btn4Mult);
+  btnGen5 = new GeneratorPanel("5",64,368,550,115, "button5", baseOutput*btn5Mult);
+  btnGen6 = new GeneratorPanel("6",666,368,550,115, "button6", baseOutput*btn6Mult);
 
 }
 
@@ -71,7 +78,7 @@ boolean canBuyUpgrade(int upgradeCost){
 }
 
 void button1(){
-  int upgradeCost = btnGen1.gen.level * 100;
+  int upgradeCost = btnGen1.gen.level * baseCost;
   if(canBuyUpgrade(upgradeCost))
   {
     btnGen1.gen.level++;
@@ -80,9 +87,79 @@ void button1(){
   println("Button 1 was pressed");
 }
 
+void button2(){
+  int upgradeCost = btnGen2.gen.level * baseCost * btn2Mult;
+  if(canBuyUpgrade(upgradeCost))
+  {
+    btnGen2.gen.level++;
+    totalMoney-=upgradeCost;
+  }
+  println("Button 2 was pressed");
+}
+
+void button3(){
+  int upgradeCost = btnGen3.gen.level * baseCost * btn3Mult;
+  if(canBuyUpgrade(upgradeCost))
+  {
+    btnGen3.gen.level++;
+    totalMoney-=upgradeCost;
+  }
+  println("Button 3 was pressed");
+}
+
+void button4(){
+  int upgradeCost = btnGen4.gen.level * baseCost * btn4Mult;
+  if(canBuyUpgrade(upgradeCost))
+  {
+    btnGen4.gen.level++;
+    totalMoney-=upgradeCost;
+  }
+  println("Button 4 was pressed");
+}
+
+void button5(){
+  int upgradeCost = btnGen5.gen.level * baseCost * btn5Mult;
+  if(canBuyUpgrade(upgradeCost))
+  {
+    btnGen5.gen.level++;
+    totalMoney-=upgradeCost;
+  }
+  println("Button 5 was pressed");
+}
+
+void button6(){
+  int upgradeCost = btnGen6.gen.level * baseCost * btn6Mult;
+  if(canBuyUpgrade(upgradeCost))
+  {
+    btnGen6.gen.level++;
+    totalMoney-=upgradeCost;
+  }
+  println("Button 6 was pressed");
+}
+
 // generator 1 calls this every tick
 void gen1Tick(){
   totalMoney = totalMoney + btnGen1.gen.output * btnGen1.gen.level;
+}
+
+void gen2Tick(){
+  totalMoney = totalMoney + btnGen2.gen.output * btnGen2.gen.level;
+}
+
+void gen3Tick(){
+  totalMoney = totalMoney + btnGen3.gen.output * btnGen3.gen.level;
+}
+
+void gen4Tick(){
+  totalMoney = totalMoney + btnGen4.gen.output * btnGen4.gen.level;
+}
+
+void gen5Tick(){
+  totalMoney = totalMoney + btnGen5.gen.output * btnGen5.gen.level;
+}
+
+void gen6Tick(){
+  totalMoney = totalMoney + btnGen6.gen.output * btnGen6.gen.level;
 }
 
 void mouseMoved() {
