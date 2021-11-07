@@ -1,11 +1,10 @@
 ArrayList<Generator> generatorList = new ArrayList<Generator>(6);// only 6 gens in game
 
 
-void handleGeneratorTick(){
+void handleGeneratorTicks(){
     for(Generator g : generatorList){
         g.doTick();
     }
-
 }
 
 class Generator{
@@ -17,12 +16,15 @@ class Generator{
 
 
     public Generator(){
-
+        level = 1;
+        output = 100;
+        generatorList.add(this);
     }
 
     // I have no clue if this works
     void doTick(){
-        thread(onTick);
+        if(onTick != null && !onTick.isEmpty())
+            thread(onTick);
     }
 
 }
