@@ -3,7 +3,8 @@ ArrayList<GeneratorPanel> generatorList = new ArrayList<GeneratorPanel>(6);// on
 class GeneratorPanel{
   int x,y;
   int width,height;
-  String pannelText = "TEST";
+  //String pannelText = "TEST";
+  String genName;
 
   Button btn;
 
@@ -11,7 +12,7 @@ class GeneratorPanel{
 
   //note you cannot change the code of a button or tick
 
-  public GeneratorPanel(String btnText, int x, int y, int width, int height, String code, int output){
+  public GeneratorPanel(String btnText, String genName,int x, int y, int width, int height, String code, int output){
     //init button
     //init size
     //int panel color
@@ -32,16 +33,23 @@ class GeneratorPanel{
     gen = new Generator(output, "gen" + btnText + "Tick");
     generatorList.add(this);
 
+
+    this.genName = genName;
+
   }
 
   void render(){
     fill(0,0,150);// TODO: current default, replace with image later
     rect(x, y, width, height);
+
     textAlign(LEFT);
+    textSize(64);
+    fill(255);
+    text(genName, x+height, y+(height/2)-10);
+
     textSize(32);
-    fill(0);
-    text(pannelText, x+height, y+(height/2));
-    text("Level: " + gen.level, x+height, y+(height/2)+32);
+    text("Current Level: " + gen.level, x+height, y+(height/2)+16);
+    text("Upgrade Cost: " + gen.getCost(), x+height, y+(height/2)+48);
 
     btn.render();
   }

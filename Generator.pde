@@ -17,4 +17,8 @@ class Generator{
             thread(onTick);
     }
 
+    double getCost(){
+        return Math.pow(level+1,level);
+    }
+
 }
