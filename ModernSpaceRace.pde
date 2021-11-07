@@ -61,9 +61,28 @@ void buttonCode(){
 
 }
 
+boolean canBuyUpgrade(int upgradeCost){
+  if(upgradeCost > totalMoney)
+  {
+    return false;
+  }
+  return true;
+}
+
 void button1(){
-  totalMoney+= 1000;
+  int upgradeCost = btnGen1.gen.level * 10000;
+  if(canBuyUpgrade(upgradeCost))
+  {
+    btnGen1.gen.onTick = "btnGen1Tick";
+    btnGen1.gen.level++;
+    totalMoney-=upgradeCost;
+  }
   println("Button 1 was pressed");
+}
+
+// generator 1 calls this every tick
+void btnGen1Tick(){
+  totalMoney = totalMoney + btnGen1.gen.output * btnGen1.gen.level;
 }
 
 void mouseMoved() {

@@ -1,7 +1,7 @@
 class Generator{
 
     int level;
-    float output;// in dollars
+    int output;// in dollars
     String onTick = ""; //
     // need id???
 
