@@ -5,12 +5,18 @@
 //
 
 void setup(){
-  frameRate(60);
-  size(720, 480);
+    frameRate(60);
+    size(1280, 720);
 }
 
 void draw(){
-  background(255);
+
+    background(255);
+
+    textSize(100);
+    fill(255, 0, 0);
+    text("Heeeeeyzzzz",100,100);
+
 }
 
 
