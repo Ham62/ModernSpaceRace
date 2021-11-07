@@ -5,14 +5,15 @@ class Generator{
     String onTick = ""; //
     // need id???
 
-    public Generator(){
+    public Generator(int output, String onTick){
         level = 0;
-        output = 100;
+        this.output = output;
+        this.onTick = onTick;
     }
 
     // I have no clue if this works
     void doTick(){
-        if(onTick != null && !onTick.isEmpty())
+        if(onTick != null && !onTick.isEmpty() && level != 0)
             thread(onTick);
     }
 

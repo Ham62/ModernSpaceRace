@@ -19,12 +19,12 @@ void setup(){
   frameRate(60);
   size(1280, 720);
 
-  btnGen1 = new GeneratorPanel("1",64,72,550,115, "button1");
-  btnGen2 = new GeneratorPanel("2",666,72,550,115, "button1");
-  btnGen3 = new GeneratorPanel("3",64,220,550,115, "button1");
-  btnGen4 = new GeneratorPanel("4",666,220,550,115, "button1");
-  btnGen5 = new GeneratorPanel("5",64,368,550,115, "button1");
-  btnGen6 = new GeneratorPanel("6",666,368,550,115, "button1");
+  btnGen1 = new GeneratorPanel("1",64,72,550,115, "button1", 1);
+  btnGen2 = new GeneratorPanel("2",666,72,550,115, "button2", 20);
+  btnGen3 = new GeneratorPanel("3",64,220,550,115, "button3", 150);
+  btnGen4 = new GeneratorPanel("4",666,220,550,115, "button4", 1350);
+  btnGen5 = new GeneratorPanel("5",64,368,550,115, "button5", 9001);
+  btnGen6 = new GeneratorPanel("6",666,368,550,115, "button6", 100000);
 
 }
 
@@ -61,6 +61,7 @@ void buttonCode(){
 
 }
 
+// check if we have enough money to buy an upgrade
 boolean canBuyUpgrade(int upgradeCost){
   if(upgradeCost > totalMoney)
   {
@@ -70,10 +71,9 @@ boolean canBuyUpgrade(int upgradeCost){
 }
 
 void button1(){
-  int upgradeCost = btnGen1.gen.level * 10000;
+  int upgradeCost = btnGen1.gen.level * 100;
   if(canBuyUpgrade(upgradeCost))
   {
-    btnGen1.gen.onTick = "btnGen1Tick";
     btnGen1.gen.level++;
     totalMoney-=upgradeCost;
   }
@@ -81,7 +81,7 @@ void button1(){
 }
 
 // generator 1 calls this every tick
-void btnGen1Tick(){
+void gen1Tick(){
   totalMoney = totalMoney + btnGen1.gen.output * btnGen1.gen.level;
 }
 

@@ -11,7 +11,7 @@ class GeneratorPanel{
 
   //note you cannot change the code of a button or tick
 
-  public GeneratorPanel(String btnText, int x, int y, int width, int height, String code){
+  public GeneratorPanel(String btnText, int x, int y, int width, int height, String code, int output){
     //init button
     //init size
     //int panel color
@@ -29,7 +29,7 @@ class GeneratorPanel{
 
     // Inits Generator
     //TODO: add update tick
-    gen = new Generator();
+    gen = new Generator(output, "gen" + btnText + "Tick");
     generatorList.add(this);
 
   }
