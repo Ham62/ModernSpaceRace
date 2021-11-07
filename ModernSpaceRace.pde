@@ -14,12 +14,12 @@ Button button6;
 void setup(){
     frameRate(60);
     size(1280, 720);
-    button1 = new Button("button1",64,72,100,115,"Text");
-    button2 = new Button("button2",666,72,100,115,"Text");
-    button3 = new Button("button3",64,220,100,115,"Text");
-    button4 = new Button("button4",666,220,100,115,"Text");
-    button5 = new Button("button5",64,368,100,115,"Text");
-    button6 = new Button("button6",666,368,100,115,"Text");
+    button1 = new Button("button1",64,72,100,115,"Button1");
+    button2 = new Button("button2",666,72,100,115,"Button2");
+    button3 = new Button("button3",64,220,100,115,"Button3");
+    button4 = new Button("button4",666,220,100,115,"Button4");
+    button5 = new Button("button5",64,368,100,115,"Button5");
+    button6 = new Button("button6",666,368,100,115,"Button6");
     registerButton(button1);
     registerButton(button2);
     registerButton(button3);
@@ -62,7 +62,29 @@ void draw(){
     RenderButtons();
 }
 
+void Button1(){
+  println("Button 1 was pressed");
+}
 
+void Button2(){
+  println("Button 2 was pressed");
+}
+
+void Button3(){
+  println("Button 3 was pressed");
+}
+
+void Button4(){
+  println("Button 4 was pressed");
+}
+
+void Button5(){
+  println("Button 5 was pressed");
+}
+
+void Button6(){
+  println("Button 6 was pressed");
+}
 
 void mouseMoved() {
   checkButtonHover(); // highlights a button when you hover over it
