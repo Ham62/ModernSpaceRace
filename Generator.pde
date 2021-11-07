@@ -3,13 +3,14 @@ class Generator{
     int level;
     int output;// in dollars
     String onTick = ""; //
-    int base = 1;
+    float base = 1;
     // need id???
 
-    public Generator(int output, String onTick){
+    public Generator(int output, String onTick, float base){
         level = 0;
         this.output = output;
         this.onTick = onTick;
+        this.base = base;
     }
 
     // I have no clue if this works
