@@ -11,6 +11,9 @@ Button button5;
 Button button6;
 
 
+int totalMoney = 0;
+
+
 void setup(){
     frameRate(60);
     size(1280, 720);
@@ -26,63 +29,81 @@ void setup(){
     registerButton(button4);
     registerButton(button5);
     registerButton(button6);
-    
+
 }
 
 void draw(){
 
     background(160);
-    
+
     fill(0,150,0);
     rect(50,60,1180,600);
-    
-    
+
     fill(0,0,150);
+    // button 1
     rect(64,72,550,115);
-    
+
+    // button 2
     rect(666,72,550,115);
-    
+
+    // button 3
     rect(64,220,550,115);
-    
+
+    // button 4
     rect(666,220,550,115);
-    
+
+    // button 5
     rect(64,368,550,115);
-    
+
+    // button 6
     rect(666,368,550,115);
-    
+
     fill(150,150,0);
     rect(50, 516, 1180, 144);
-    
+
+    // total money
     fill(150,0,0);
     rect(339,500, 602, 70);
-    
+    fill(0);
+    textAlign(CENTER);
+    textSize(64);
+    text("$"+totalMoney,640,555);
+
+
+
     fill(150,0,150);
     rect(476,590,328,50);
-    
+
     RenderButtons();
 }
 
 void Button1(){
+  totalMoney+= 1000;
   println("Button 1 was pressed");
 }
 
 void Button2(){
+  totalMoney+= 1000;
   println("Button 2 was pressed");
 }
 
 void Button3(){
+  totalMoney+= 1000;
   println("Button 3 was pressed");
 }
 
 void Button4(){
+  totalMoney+= 1000;
   println("Button 4 was pressed");
 }
 
 void Button5(){
+  totalMoney+= 1000;
   println("Button 5 was pressed");
 }
 
 void Button6(){
+  totalMoney+= 1000;
   println("Button 6 was pressed");
 }
 
@@ -92,6 +113,6 @@ void mouseMoved() {
 
 void mouseClicked() {
   // Checks if a button was clicked and exit if one was
-  if (checkButtonClick()) 
+  if (checkButtonClick())
     return;
 }
