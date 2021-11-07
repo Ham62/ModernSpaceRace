@@ -7,3 +7,4 @@ Music Game Jam 2021 entry
 - Graham Downey
 - Manjyot
 - Owen Burland
+- Dylan Elias
