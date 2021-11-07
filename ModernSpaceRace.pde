@@ -26,12 +26,12 @@ void setup(){
   frameRate(60);
   size(1280, 720);
 
-  btnGen1 = new GeneratorPanel("1",64,72,550,115, "button1", baseOutput);
-  btnGen2 = new GeneratorPanel("2",666,72,550,115, "button2", baseOutput*btn2Mult);
-  btnGen3 = new GeneratorPanel("3",64,220,550,115, "button3", baseOutput*btn3Mult);
-  btnGen4 = new GeneratorPanel("4",666,220,550,115, "button4", baseOutput*btn4Mult);
-  btnGen5 = new GeneratorPanel("5",64,368,550,115, "button5", baseOutput*btn5Mult);
-  btnGen6 = new GeneratorPanel("6",666,368,550,115, "button6", baseOutput*btn6Mult);
+  btnGen1 = new GeneratorPanel("1","Lemonaid stand",64,72,550,115, "button1", baseOutput);
+  btnGen2 = new GeneratorPanel("2","ice cream truck",666,72,550,115, "button2", baseOutput*btn2Mult);
+  btnGen3 = new GeneratorPanel("3","Emerald mines",64,220,550,115, "button3", baseOutput*btn3Mult);
+  btnGen4 = new GeneratorPanel("4","Assless ass",666,220,550,115, "button4", baseOutput*btn4Mult);
+  btnGen5 = new GeneratorPanel("5","Nukes",64,368,550,115, "button5", baseOutput*btn5Mult);
+  btnGen6 = new GeneratorPanel("6","Fraud",666,368,550,115, "button6", baseOutput*btn6Mult);
 
 }
 
@@ -69,7 +69,7 @@ void buttonCode(){
 }
 
 // check if we have enough money to buy an upgrade
-boolean canBuyUpgrade(int upgradeCost){
+boolean canBuyUpgrade(double upgradeCost){
   if(upgradeCost > totalMoney)
   {
     return false;
@@ -78,7 +78,7 @@ boolean canBuyUpgrade(int upgradeCost){
 }
 
 void button1(){
-  int upgradeCost = btnGen1.gen.level * baseCost;
+  double upgradeCost = btnGen1.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
     btnGen1.gen.level++;
@@ -88,7 +88,7 @@ void button1(){
 }
 
 void button2(){
-  int upgradeCost = btnGen2.gen.level * baseCost * btn2Mult;
+  double upgradeCost = btnGen2.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
     btnGen2.gen.level++;
@@ -98,7 +98,7 @@ void button2(){
 }
 
 void button3(){
-  int upgradeCost = btnGen3.gen.level * baseCost * btn3Mult;
+  double upgradeCost = btnGen3.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
     btnGen3.gen.level++;
@@ -108,7 +108,7 @@ void button3(){
 }
 
 void button4(){
-  int upgradeCost = btnGen4.gen.level * baseCost * btn4Mult;
+  double upgradeCost = btnGen4.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
     btnGen4.gen.level++;
@@ -118,7 +118,7 @@ void button4(){
 }
 
 void button5(){
-  int upgradeCost = btnGen5.gen.level * baseCost * btn5Mult;
+  double upgradeCost = btnGen5.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
     btnGen5.gen.level++;
@@ -128,7 +128,7 @@ void button5(){
 }
 
 void button6(){
-  int upgradeCost = btnGen6.gen.level * baseCost * btn6Mult;
+  double upgradeCost = btnGen6.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
     btnGen6.gen.level++;
