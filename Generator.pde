@@ -17,12 +17,14 @@ class Generator{
 
 
     public Generator(){
-
+        level = 1;
+        output = 100;
     }
 
     // I have no clue if this works
     void doTick(){
-        thread(onTick);
+        if(onTick != NULL && !onTick.isEmpty())
+            thread(onTick);
     }
 
 }
