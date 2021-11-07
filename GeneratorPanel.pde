@@ -3,7 +3,7 @@ ArrayList<GeneratorPanel> generatorList = new ArrayList<GeneratorPanel>(6);// on
 class GeneratorPanel{
   int x,y;
   int width,height;
-  String pannelText;
+  String pannelText = "TEST";
 
   Button btn;
 
@@ -24,7 +24,7 @@ class GeneratorPanel{
 
     // Inits Button
     //change width later to be something more suitable
-    btn = new Button(btnText,x,y,100,height,code);
+    btn = new Button(btnText,x,y,height,height,code);
     registerButton(btn);
 
     // Inits Generator
@@ -37,6 +37,12 @@ class GeneratorPanel{
   void render(){
     fill(0,0,150);// TODO: current default, replace with image later
     rect(x, y, width, height);
+    textAlign(LEFT);
+    textSize(32);
+    fill(0);
+    text(pannelText, x+height, y+(height/2));
+    text("Level: " + gen.level, x+height, y+(height/2)+32);
+
     btn.render();
   }
 
