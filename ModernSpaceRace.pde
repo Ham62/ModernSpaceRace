@@ -12,7 +12,7 @@ GeneratorPanel btnGen4;
 GeneratorPanel btnGen5;
 GeneratorPanel btnGen6;
 
-int totalMoney = 0;
+long totalMoney = 2;
 int baseOutput = 1;
 int baseCost = 100;
 int btn2Mult = 20;

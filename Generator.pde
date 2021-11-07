@@ -6,7 +6,7 @@ class Generator{
     float base = 1;
     // need id???
 
-    public Generator(int output, String onTick, float base){
+    public Generator(int output, String onTick){
         level = 0;
         this.output = output;
         this.onTick = onTick;
