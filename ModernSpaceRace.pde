@@ -15,11 +15,11 @@ void setup(){
     frameRate(60);
     size(1280, 720);
     button1 = new Button("button1",64,72,100,115,"Text");
-    button2 = new Button("button2",1116,72,100,115,"Text");
+    button2 = new Button("button2",666,72,100,115,"Text");
     button3 = new Button("button3",64,220,100,115,"Text");
-    button4 = new Button("button4",1116,220,100,115,"Text");
+    button4 = new Button("button4",666,220,100,115,"Text");
     button5 = new Button("button5",64,368,100,115,"Text");
-    button6 = new Button("button6",1116,368,100,115,"Text");
+    button6 = new Button("button6",666,368,100,115,"Text");
     registerButton(button1);
     registerButton(button2);
     registerButton(button3);
