@@ -14,15 +14,15 @@ void unregisterButton(Button btn) {
 }
 
 final int BUTTON_PADDING = 10; // Padding around edges for auto-size text
-class Button { 
+class Button {
   String sCaption;
-  
+
   RECT area; // Area of buttons
-  
+
   int bWidth;
   int bHeight;
-  
-  buttonColors colors; 
+
+  buttonColors colors;
   buttonFont font;
 
   String buttonCode; // Function we call when you click a button
@@ -30,7 +30,7 @@ class Button {
   // Do not modify these values, they're dymanic varaiables to handle hover animation, etc.
   color activeColor;
   color activeFontColor;
-   
+
   // Initalizers with various amounts of customization
   public Button(String text, int X, int Y, int bWidth, int bHeight, String buttonCode, buttonFont font_, buttonColors colors_) {
     init(text, X, Y, bWidth, bHeight, buttonCode, font_, colors_);
@@ -44,7 +44,7 @@ class Button {
     buttonColors colors_ = new buttonColors(color(100), color(180), color(150, 150, 255)); // default button colors
     init(text, X, Y, bWidth, bHeight, buttonCode, font_, colors_);
   }
-  
+
   // initalizes the button
   private void init(String text, int X, int Y, int bWidth, int bHeight, String buttonCode, buttonFont font_, buttonColors colors_)
   {
@@ -52,7 +52,7 @@ class Button {
     this.bWidth = bWidth;
     this.bHeight = bHeight;
     this.area = new RECT(X, Y, X+bWidth, Y+bHeight); //calculating button area
-    
+
     this.buttonCode = buttonCode;
 
     this.colors = colors_;
@@ -62,23 +62,24 @@ class Button {
   // renders button on screen
   public void render() {
     int iFontSz; // Stores temp font size
-    
+
     // Draw background
     fill(activeColor);
     rect(area.left, area.top, bWidth, bHeight);
-    
+
     // Draw font
     if (font.size < 1) {   // Auto-size text
       iFontSz = calcTextSize();
-    } else {               // static-sized text 
+    } else {               // static-sized text
       iFontSz = font.size;
     }
     textSize(iFontSz);  // Set size of font
     textAlign(CENTER);  // Align text to centre of button
     fill(activeFontColor);      // Set font color
     text(sCaption, area.left+(bWidth/2), area.top+(bHeight/2)+(iFontSz / 2.75)); // Draws text centered on button
+    //textAlign(LEFT);    // RESETS alignment for text below
   }
-  
+
   // Auto-calculate text size for variable-sized font
   private int calcTextSize() {
     int iSz = 1;
@@ -86,10 +87,10 @@ class Button {
       iSz++;
       textSize(iSz);
     } while (textWidth(sCaption) < bWidth-BUTTON_PADDING && iSz < bHeight-BUTTON_PADDING); // ensure we don't overflow
-    
+
     return (iSz - 1); // return iSz-1 since iSz is the overflow value
   }
-  
+
   public void move(int iX, int iY, int iWid, int iHei) {
     area.left = iX;
     area.top = iY;
@@ -103,14 +104,14 @@ class Button {
     area.right = iX+bWidth;
     area.bottom = iY+bHeight;
   }
-  
+
   // Resize the button
   public void resize(int iWid, int iHei) {
     bWidth = iWid; bHeight = iHei;
     area.right = area.left+iWid;
     area.bottom = area.top+iHei;
   }
-  
+
   // Check if mouse is over the button
   public boolean mouseOver() {
     if (mouseX >= area.left && mouseX <= area.right && // X bounds
@@ -138,7 +139,7 @@ class RECT {
 class buttonFont {
   public int size;
   public color c;
-  // Processing doesn't allow you to do int size_ = -1 
+  // Processing doesn't allow you to do int size_ = -1
   // because the compiler sucks ass
   public buttonFont(color c_) {
     c = c_;
@@ -178,7 +179,7 @@ void checkButtonHover() {
     } else {
       buttonList.get(iB).activeColor = buttonList.get(iB).colors.background; // Normal color
     }
-    
+
     buttonList.get(iB).activeFontColor = buttonList.get(iB).font.c; // font is always the same color
   }
 
