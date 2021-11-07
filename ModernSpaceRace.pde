@@ -16,7 +16,6 @@ void draw(){
     textSize(100);
     fill(255, 0, 0);
     text("Heeeeeyzzzz",100,100);
-
 }
 
 
