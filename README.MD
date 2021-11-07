@@ -2,5 +2,9 @@
 
 Music Game Jam 2021 entry
 
-#### Team members(Add your name):
-- Carson
+#### Team members:
+- Carson 
+- Graham Downey
+- Manjyot
+- Owen Burland
+- Dylan Elias
