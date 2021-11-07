@@ -14,6 +14,8 @@ void unregisterButton(Button btn) {
 }
 
 final int BUTTON_PADDING = 10; // Padding around edges for auto-size text
+
+
 class Button {
   String sCaption;
 

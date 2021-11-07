@@ -1,11 +1,11 @@
-ArrayList<Generator> generatorList = new ArrayList<Generator>(6);// only 6 gens in game
+//ArrayList<Generator> generatorList = new ArrayList<Generator>(6);// only 6 gens in game
 
 
-void handleGeneratorTicks(){
+/*void handleGeneratorTicks(){
     for(Generator g : generatorList){
         g.doTick();
     }
-}
+}*/
 
 class Generator{
 
@@ -16,7 +16,7 @@ class Generator{
 
 
     public Generator(){
-        level = 1;
+        level = 0;
         output = 100;
         generatorList.add(this);
     }
