@@ -3,6 +3,7 @@ class Generator{
     int level;
     int output;// in dollars
     String onTick = ""; //
+    int base = 1;
     // need id???
 
     public Generator(int output, String onTick){
