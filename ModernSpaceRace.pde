@@ -89,9 +89,22 @@ boolean canBuyUpgrade(double upgradeCost){
 
 void newBezosPopup() {
     PImage imgBezos = loadImage("images\\bezos.png");
-    String sCaption = "*Ring* *Ring*\nYou pick up the phone and\nit's Jeff Bezos inquiring\nabout that succulent juicy\nbunda.";
-    Popup popup = new Popup(sCaption, imgBezos);
-    showPopup(popup, 240);
+    String[] sCaptions = new String[] {
+        "*Ring* *Ring*\n\nYou pick up the phone and\nit's Jeff Bezos inquiring\nabout that succulent juicy\nbunda.",
+        "Jeff Bezos:\n\"Musky!\nThe minecraft server's down\"",
+        "Jeff Bezos:\n\"Which hair clinic did you\nuse... asking for a friend.\"",
+        "Jeff Bezos:               8:34pm\n\n\"So you're single now,\nright? ;)\"",
+        "Jeff Bezos:\n\"Ree. ree. ree ree ree.\n\nMegazoid project.\nMusk, for the last time, no.\"",
+        "Jeff Bezos:\n\"Can you make a tweet about\ntesla stock again? I need to\nmake some capital.\"",
+        "Jeff Bezos:\n\"You can't be a paladin,\nBranson already called it for\nthursday.\"",
+        "Jeff Bezos:\n\"Do you think it would look\ncool if I wore a cowboy hat?\n\nI heard space cowboys were\ntrending on a certain site.\"",
+        "Jeff Bezos:\n\"You can't sue me for\ndressing up as Picard on my\nnext space flight.\n\nI WILL DOUBLE DOG SUE\nYOU!\"",
+        "Jeff Bezos:\n\"If you say my rocket only\ndoes low orbit one more\ntime, I'm going to buy your\nfavorite franchise and ruin\nit!\"",
+        "Jeff Bezos:\n\"Alexa, Bing 'Living with\nbaldness...'\""
+    };
+    
+    Popup popup = new Popup(sCaptions[(int)random(sCaptions.length)], imgBezos);s
+    showPopup(popup);
 }
 
 void button1(){
@@ -106,6 +119,7 @@ void button1(){
 }
 
 void button2(){
+  newBezosPopup();
   double upgradeCost = btnGen2.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
@@ -116,6 +130,7 @@ void button2(){
 }
 
 void button3(){
+  newBezosPopup();
   double upgradeCost = btnGen3.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
@@ -126,6 +141,7 @@ void button3(){
 }
 
 void button4(){
+  newBezosPopup();
   double upgradeCost = btnGen4.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
@@ -136,6 +152,7 @@ void button4(){
 }
 
 void button5(){
+  newBezosPopup();
   double upgradeCost = btnGen5.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
@@ -146,6 +163,7 @@ void button5(){
 }
 
 void button6(){
+  newBezosPopup();
   double upgradeCost = btnGen6.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
