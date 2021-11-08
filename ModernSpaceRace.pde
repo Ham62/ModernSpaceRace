@@ -12,7 +12,9 @@ GeneratorPanel btnGen4;
 GeneratorPanel btnGen5;
 GeneratorPanel btnGen6;
 Button payWorkers;
+Button btnWin;
 
+int tick = 0;
 double totalMoney = 1;
 int baseOutput = 1;
 int baseCost = 100;
@@ -22,11 +24,19 @@ int btn4Mult = 100;
 int btn5Mult = 875;
 int btn6Mult = 6000;
 
+int introCounter = 2;
+int winCounter = 0;
 
 void setup(){
   frameRate(60);
   size(1280, 720);
-
+  
+  // Intro slides
+  PImage imgIntro = loadImage("images\\elonsad.png");
+  Popup popup = new Popup("You've just made your 5th\ntweet about doge coin today\nand X Æ A-12 is getting\nhungry again. Since when\nwas life on Earth supposed\nto be this mundane?", imgIntro);
+  showPopup(popup, 1800);
+  
+  
   btnGen1 = new GeneratorPanel("1","Emerald Mine",64,72,550,115, "button1", baseOutput);
   btnGen2 = new GeneratorPanel("2","Stolen Idea",666,72,550,115, "button2", baseOutput*btn2Mult);
   btnGen3 = new GeneratorPanel("3","Bad Subway",64,220,550,115, "button3", baseOutput*btn3Mult);
@@ -35,11 +45,22 @@ void setup(){
   btnGen6 = new GeneratorPanel("6","Fraud",666,368,550,115, "button6", baseOutput*btn6Mult);
 
   payWorkers = new Button("Pay Workers",75,525,100,100,"hello");
+  btnWin = new Button("Buy Space Ship - $69000000",476,590,330,50,"win");
   
   registerButton(payWorkers);
+  registerButton(btnWin);
 }
 
 void draw(){
+  
+  if(tick < 60)
+  {
+    tick++;
+  }
+  else
+  {
+    tick = 0;
+  }
 
   background(160);
 
@@ -107,104 +128,79 @@ void newBezosPopup() {
     showPopup(popup);
 }
 
-void newBezosPopupPoor() {
-    PImage imgBezos = loadImage("images\\bezoslaugh.png");
-    String[] sCaptions = new String[] {
-        "You are too poor.",
-    };
-    
-    Popup popup = new Popup(sCaptions[(int)random(sCaptions.length)], imgBezos);
-    showPopup(popup);
-}
-
 void button1(){
+  newBezosPopup();
   double upgradeCost = btnGen1.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
-    newBezosPopup();
     btnGen1.gen.level++;
     totalMoney-=upgradeCost;
-  }
-  else
-  {
-    newBezosPopupPoor();
   }
   println("Button 1 was pressed");
 }
 
 void button2(){
+  newBezosPopup();
   double upgradeCost = btnGen2.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
-    newBezosPopup();
     btnGen2.gen.level++;
     totalMoney-=upgradeCost;
-  }
-  else
-  {
-    newBezosPopupPoor();
   }
   println("Button 2 was pressed");
 }
 
 void button3(){
+  newBezosPopup();
   double upgradeCost = btnGen3.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
-    newBezosPopup();
     btnGen3.gen.level++;
     totalMoney-=upgradeCost;
-  }
-  else
-  {
-    newBezosPopupPoor();
   }
   println("Button 3 was pressed");
 }
 
 void button4(){
+  newBezosPopup();
   double upgradeCost = btnGen4.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
-    newBezosPopup();
     btnGen4.gen.level++;
     totalMoney-=upgradeCost;
-  }
-  else
-  {
-    newBezosPopupPoor();
   }
   println("Button 4 was pressed");
 }
 
 void button5(){
+  newBezosPopup();
   double upgradeCost = btnGen5.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
-    newBezosPopup();
     btnGen5.gen.level++;
     totalMoney-=upgradeCost;
-  }
-  else
-  {
-    newBezosPopupPoor();
   }
   println("Button 5 was pressed");
 }
 
 void button6(){
+  newBezosPopup();
   double upgradeCost = btnGen6.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
-    newBezosPopup();
     btnGen6.gen.level++;
     totalMoney-=upgradeCost;
   }
-  else
-  {
-    newBezosPopupPoor();
-  }
   println("Button 6 was pressed");
+}
+
+void win() {
+    if (canBuyUpgrade(69000000)) {
+        winCounter = 1;
+        PImage imgWin = loadImage("images\\win.png");
+        Popup popup = new Popup("\"Finally,\" you say as you let\nout a sigh of relief. \"I never\nthought I would get away\nfrom Jeff Beezoes. Anyways,\nI have returned to Mars!\"", imgWin);
+        showPopup(popup);
+    }
 }
 
 // generator 1 calls this every tick
