@@ -54,6 +54,10 @@ void draw(){
 
 
   renderPannels(); // dw Graham, this also renders the buttons. From GeneratorPanel.pde
+  
+  if (doPopupTick()) 
+    return;
+
   handlePannelTicks();
 
   fill(150,150,0);
@@ -103,7 +107,7 @@ void newBezosPopup() {
         "Jeff Bezos:\n\"Alexa, Bing 'Living with\nbaldness...'\""
     };
     
-    Popup popup = new Popup(sCaptions[(int)random(sCaptions.length)], imgBezos);s
+    Popup popup = new Popup(sCaptions[(int)random(sCaptions.length)], imgBezos);
     showPopup(popup);
 }
 
