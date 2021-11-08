@@ -27,11 +27,11 @@ void setup(){
   frameRate(60);
   size(1280, 720);
 
-  btnGen1 = new GeneratorPanel("1","Lemonaid stand",64,72,550,115, "button1", baseOutput);
-  btnGen2 = new GeneratorPanel("2","ice cream truck",666,72,550,115, "button2", baseOutput*btn2Mult);
-  btnGen3 = new GeneratorPanel("3","Emerald mines",64,220,550,115, "button3", baseOutput*btn3Mult);
-  btnGen4 = new GeneratorPanel("4","Assless ass",666,220,550,115, "button4", baseOutput*btn4Mult);
-  btnGen5 = new GeneratorPanel("5","Nukes",64,368,550,115, "button5", baseOutput*btn5Mult);
+  btnGen1 = new GeneratorPanel("1","Emerald Mine",64,72,550,115, "button1", baseOutput);
+  btnGen2 = new GeneratorPanel("2","Stolen Idea",666,72,550,115, "button2", baseOutput*btn2Mult);
+  btnGen3 = new GeneratorPanel("3","Bad Subway",64,220,550,115, "button3", baseOutput*btn3Mult);
+  btnGen4 = new GeneratorPanel("4","Emotion Algorithm",666,220,550,115, "button4", baseOutput*btn4Mult);
+  btnGen5 = new GeneratorPanel("5","Controversial Tweet",64,368,550,115, "button5", baseOutput*btn5Mult);
   btnGen6 = new GeneratorPanel("6","Fraud",666,368,550,115, "button6", baseOutput*btn6Mult);
 
 }
