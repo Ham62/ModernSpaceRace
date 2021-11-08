@@ -117,68 +117,102 @@ void newBezosPopup() {
     showPopup(popup);
 }
 
+void newBezosPopupPoor() {
+    PImage imgBezos = loadImage("images\\bezoslaugh.png");
+    String[] sCaptions = new String[] {
+        "You are too poor to do that.",
+    };
+    
+    Popup popup = new Popup(sCaptions[(int)random(sCaptions.length)], imgBezos);
+    showPopup(popup);
+}
+
 void button1(){
-  newBezosPopup();
   double upgradeCost = btnGen1.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
+    newBezosPopup();
     btnGen1.gen.level++;
     totalMoney-=upgradeCost;
+  }
+  else
+  {
+    newBezosPopupPoor();
   }
   println("Button 1 was pressed");
 }
 
 void button2(){
-  newBezosPopup();
   double upgradeCost = btnGen2.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
+    newBezosPopup();
     btnGen2.gen.level++;
     totalMoney-=upgradeCost;
+  }
+  else
+  {
+    newBezosPopupPoor();
   }
   println("Button 2 was pressed");
 }
 
 void button3(){
-  newBezosPopup();
   double upgradeCost = btnGen3.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
+    newBezosPopup();
     btnGen3.gen.level++;
     totalMoney-=upgradeCost;
+  }
+  else
+  {
+    newBezosPopupPoor();
   }
   println("Button 3 was pressed");
 }
 
 void button4(){
-  newBezosPopup();
   double upgradeCost = btnGen4.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
+    newBezosPopup();
     btnGen4.gen.level++;
     totalMoney-=upgradeCost;
+  }
+  else
+  {
+    newBezosPopupPoor();
   }
   println("Button 4 was pressed");
 }
 
 void button5(){
-  newBezosPopup();
   double upgradeCost = btnGen5.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
+    newBezosPopup();
     btnGen5.gen.level++;
     totalMoney-=upgradeCost;
+  }
+  else
+  {
+    newBezosPopupPoor();
   }
   println("Button 5 was pressed");
 }
 
 void button6(){
-  newBezosPopup();
   double upgradeCost = btnGen6.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
+    newBezosPopup();
     btnGen6.gen.level++;
     totalMoney-=upgradeCost;
+  }
+  else
+  {
+    newBezosPopupPoor();
   }
   println("Button 6 was pressed");
 }
