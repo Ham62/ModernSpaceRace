@@ -11,6 +11,7 @@ GeneratorPanel btnGen3;
 GeneratorPanel btnGen4;
 GeneratorPanel btnGen5;
 GeneratorPanel btnGen6;
+Button payWorkers;
 
 int tick = 0;
 double totalMoney = 1;
@@ -34,6 +35,9 @@ void setup(){
   btnGen5 = new GeneratorPanel("5","Controversial Tweet",64,368,550,115, "button5", baseOutput*btn5Mult);
   btnGen6 = new GeneratorPanel("6","Fraud",666,368,550,115, "button6", baseOutput*btn6Mult);
 
+  payWorkers = new Button("Pay Workers",75,525,100,100,"hello");
+  
+  registerButton(payWorkers);
 }
 
 void draw(){
@@ -74,6 +78,8 @@ void draw(){
 
   fill(150,0,150);
   rect(476,590,328,50);
+  
+  RenderButtons();
 
 }
 
