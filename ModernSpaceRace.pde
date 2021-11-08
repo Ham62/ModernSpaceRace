@@ -13,7 +13,6 @@ GeneratorPanel btnGen5;
 GeneratorPanel btnGen6;
 Button payWorkers;
 
-int tick = 0;
 double totalMoney = 1;
 int baseOutput = 1;
 int baseCost = 100;
@@ -41,15 +40,6 @@ void setup(){
 }
 
 void draw(){
-  
-  if(tick < 60)
-  {
-    tick++;
-  }
-  else
-  {
-    tick = 0;
-  }
 
   background(160);
 
@@ -120,7 +110,7 @@ void newBezosPopup() {
 void newBezosPopupPoor() {
     PImage imgBezos = loadImage("images\\bezoslaugh.png");
     String[] sCaptions = new String[] {
-        "You are too poor to do that.",
+        "You are too poor.",
     };
     
     Popup popup = new Popup(sCaptions[(int)random(sCaptions.length)], imgBezos);
