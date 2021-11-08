@@ -18,6 +18,7 @@ void showPopup(Popup popup) {
 void hidePopup() {
     _activepopup = null;
     _popupTimer = 0;
+    unregisterButton(btnClosePopup);
 }
 
 
