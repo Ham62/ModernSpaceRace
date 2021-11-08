@@ -20,7 +20,7 @@ class Generator{
     }
 
     double getCost(){
-        return base * Math.pow(level+1,level);
+        return base * Math.pow(2, level);
     }
 
 }

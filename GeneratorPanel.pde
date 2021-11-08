@@ -30,7 +30,7 @@ class GeneratorPanel{
 
     // Inits Generator
     //TODO: add update tick
-    gen = new Generator(output, "gen" + btnText + "Tick", pow(Integer.parseInt(btnText), 5));
+    gen = new Generator(output, "gen" + btnText + "Tick", pow(Integer.parseInt(btnText), Integer.parseInt(btnText)+2));
     generatorList.add(this);
 
 

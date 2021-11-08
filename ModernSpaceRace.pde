@@ -18,9 +18,9 @@ int baseOutput = 1;
 int baseCost = 100;
 int btn2Mult = 5;
 int btn3Mult = 15;
-int btn4Mult = 75;
-int btn5Mult = 475;
-int btn6Mult = 4000;
+int btn4Mult = 100;
+int btn5Mult = 875;
+int btn6Mult = 6000;
 
 
 void setup(){
