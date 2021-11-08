@@ -11,6 +11,10 @@ void showPopup(Popup popup, int iShowTime) {
     }
 }
 
+void showPopup(Popup popup) {
+    showPopup(popup, 216000);
+}
+    
 void hidePopup() {
     _activepopup = null;
     _popupTimer = 0;
@@ -85,7 +89,7 @@ class Popup {
         text(sCaption, iX+10, iY+20+(iFontSz / 2.75)); // Draws text centered on button
         
         // Draw image
-        image(img, iX+iWidth/2, iY, iWidth/2, iHeight);
+        image(img, iX+10+iWidth/2, iY+10, iWidth/2-20, iHeight-20);
         
         btnClosePopup.render();
     }
