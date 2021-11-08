@@ -87,7 +87,15 @@ boolean canBuyUpgrade(double upgradeCost){
   return true;
 }
 
+void newBezosPopup() {
+    PImage imgBezos = loadImage("images\\bezos.png");
+    String sCaption = "*Ring* *Ring*\nYou pick up the phone and\nit's Jeff Bezos inquiring\nabout that succulent juicy\nbunda.";
+    Popup popup = new Popup(sCaption, imgBezos);
+    showPopup(popup, 240);
+}
+
 void button1(){
+  newBezosPopup();
   double upgradeCost = btnGen1.gen.getCost();
   if(canBuyUpgrade(upgradeCost))
   {
