@@ -19,6 +19,25 @@ void hidePopup() {
     _activepopup = null;
     _popupTimer = 0;
     unregisterButton(btnClosePopup);
+    
+    if (winCounter >= 1) {
+        winCounter--;
+        PImage imgWin = loadImage("images\\win.png");
+        Popup popup = new Popup("You look around at the small\nred planet as you unzip your\npants. \"Now to do what I\ncame here to do...\"", imgWin);
+        showPopup(popup);
+    }
+    
+    if (introCounter >= 1) {
+        introCounter--;
+        String[] sIntros = new String[] {
+            "\"I've had enough!\" you yell,\nIt is time to return to your\nhome planet of Mars!\nJust like that you set out\non your newest capitalist\nventures.",
+            "You take a look in the\nmirror and see your\ndissatisfied face looking\nback."
+        };
+        PImage imgIntro = loadImage("images\\elonsad.png");
+        Popup popup = new Popup(sIntros[introCounter], imgIntro);
+        showPopup(popup, 1800);
+        return;
+    }
 }
 
 
