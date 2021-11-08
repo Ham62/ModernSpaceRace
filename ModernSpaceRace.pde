@@ -12,14 +12,15 @@ GeneratorPanel btnGen4;
 GeneratorPanel btnGen5;
 GeneratorPanel btnGen6;
 
-long totalMoney = 2;
+int tick = 0;
+double totalMoney = 1;
 int baseOutput = 1;
 int baseCost = 100;
-int btn2Mult = 20;
-int btn3Mult = 150;
-int btn4Mult = 1350;
-int btn5Mult = 9001;
-int btn6Mult = 100000;
+int btn2Mult = 5;
+int btn3Mult = 15;
+int btn4Mult = 75;
+int btn5Mult = 475;
+int btn6Mult = 4000;
 
 
 void setup(){
@@ -36,6 +37,15 @@ void setup(){
 }
 
 void draw(){
+  
+  if(tick < 60)
+  {
+    tick++;
+  }
+  else
+  {
+    tick = 0;
+  }
 
   background(160);
 
@@ -55,7 +65,7 @@ void draw(){
   fill(0);
   textAlign(CENTER);
   textSize(64);
-  text("$"+totalMoney,640,555);
+  text("$"+(int)totalMoney,640,555);
 
 
   fill(150,0,150);
@@ -139,27 +149,27 @@ void button6(){
 
 // generator 1 calls this every tick
 void gen1Tick(){
-  totalMoney = totalMoney + btnGen1.gen.output * btnGen1.gen.level;
+  totalMoney = totalMoney + (btnGen1.gen.output * btnGen1.gen.level)/60;
 }
 
 void gen2Tick(){
-  totalMoney = totalMoney + btnGen2.gen.output * btnGen2.gen.level;
+  totalMoney = totalMoney + (btnGen2.gen.output * btnGen2.gen.level)/60;
 }
 
 void gen3Tick(){
-  totalMoney = totalMoney + btnGen3.gen.output * btnGen3.gen.level;
+  totalMoney = totalMoney + (btnGen3.gen.output * btnGen3.gen.level)/60;
 }
 
 void gen4Tick(){
-  totalMoney = totalMoney + btnGen4.gen.output * btnGen4.gen.level;
+  totalMoney = totalMoney + (btnGen4.gen.output * btnGen4.gen.level)/60;
 }
 
 void gen5Tick(){
-  totalMoney = totalMoney + btnGen5.gen.output * btnGen5.gen.level;
+  totalMoney = totalMoney + (btnGen5.gen.output * btnGen5.gen.level)/60;
 }
 
 void gen6Tick(){
-  totalMoney = totalMoney + btnGen6.gen.output * btnGen6.gen.level;
+  totalMoney = totalMoney + (btnGen6.gen.output * btnGen6.gen.level)/60;
 }
 
 void mouseMoved() {

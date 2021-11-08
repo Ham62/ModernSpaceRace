@@ -1,12 +1,12 @@
 class Generator{
 
     int level;
-    int output;// in dollars
+    double output;// in dollars
     String onTick = ""; //
     float base = 1;
     // need id???
 
-    public Generator(int output, String onTick){
+    public Generator(int output, String onTick, float base){
         level = 0;
         this.output = output;
         this.onTick = onTick;
@@ -20,7 +20,7 @@ class Generator{
     }
 
     double getCost(){
-        return Math.pow(level+1,level);
+        return base * Math.pow(level+1,level);
     }
 
 }

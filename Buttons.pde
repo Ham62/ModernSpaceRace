@@ -49,7 +49,7 @@ class Button {
         init(text, X, Y, bWidth, bHeight, buttonCode, font_, colors_);
     }
     public Button(PImage image_, int X, int Y, int bWidth, int bHeight, String buttonCode) {
-        init("", X, Y, bWidth, bHeight, buttonCode, new buttonFont(color(0)), new buttonColors(0, color(128s), 0));
+        init("", X, Y, bWidth, bHeight, buttonCode, new buttonFont(color(0)), new buttonColors(0, color(128), 0));
         this.img = image_;
     }
 
